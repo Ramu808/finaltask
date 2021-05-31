@@ -5,7 +5,7 @@ export default class ProfileScreen extends React.Component {
     static navigationOptions = {  
         title: 'Profile',  
         headerStyle: {  
-            backgroundColor: '#f4511e',  
+            backgroundColor: 'green',  
         },  
         //headerTintColor: '#0ff',  
         headerTitleStyle: {  
@@ -23,6 +23,7 @@ export default class ProfileScreen extends React.Component {
                 <Text style={{ marginTop: 16,fontSize: 20,}}>  
                   
                 </Text>  
+                <Text style={styles.textStyle1}>Welcome to ProfileScreen</Text>
                 <Text style={styles.textStyle}>Welcome to Profile Screen {JSON.stringify(user_name)}</Text>  
                 <Text style={styles.textStyle}>Password: {JSON.stringify(password)}</Text>  
               
@@ -41,6 +42,11 @@ const styles = StyleSheet.create({
         fontSize: 23,  
         textAlign: 'center',  
         color: '#f00',  
+    },  
+    textStyle1: {  
+        fontSize: 23,  marginTop:2,marginBottom:93,
+        textAlign: 'center',  
+        color: 'blue',  
     },  
   
     buttonStyle:{  
