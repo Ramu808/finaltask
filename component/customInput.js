@@ -2,19 +2,12 @@
 import React,{Component} from 'react'
 import { Text, View, TouchableOpacity, Dimensions, StyleSheet, TextInput,placeholder} from 'react-native'
 
-
 const width = Dimensions.get('window').width
-
-
-
-
 class MyTextInput extends Component {
   constructor(props) {
     super(props);
     this.state = { placeholder }
-  
   }
-
   render() {
     const { placeholderStyle, style, onChange, ...rest } = this.props;
 
@@ -25,9 +18,6 @@ class MyTextInput extends Component {
       />
   }
 }
-
-
-
 
 const styles = StyleSheet.create({
   btnContainerStyle: {

@@ -20,7 +20,9 @@ title : ""
 }
 
 myFun=() =>{
-    const {username,password,} = this.state;
+   
+    const {username,password,title,onPress} = this.state;
+    // Alert.alert('Credentials', `${username} + ${password}`);
     var temp=username.search('@');
     //alert(temp);
     if(username==""){
@@ -39,11 +41,22 @@ myFun=() =>{
     else if(password.length <7){
       this.setState({Error: 'password  must be more than 7'});
     }
-  
+    else if(onPress==this.myFun){
+        // this.setState({Error: 'password  must be more than 7'});
+        this.props.navigation.navigate('Profile', {  
+            userName: this.state.username,
+            password: this.state.password,    
+        })  
+      }
+    
     else{
-      //alert('thank you, your form is submitted successfully');
+      alert('thank you, your form is submitted successfully');
+      this.props.navigation.navigate('Profile', {  
+        userName: this.state.username,
+        password: this.state.password,    
+    })  
   
-      this.setState({Error: 'thank you, your form is submitted successfully'});
+       this.setState({Error: 'thank you, your form is submitted successfully'});
     }
   
   }
@@ -68,7 +81,6 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
    
     ></MyTextInput>
 
-
 </View>
 <View style={styles.Password}>
 <MyTextInput 
@@ -77,7 +89,7 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
   placeholder="      Password    "
   secureTextEntry={true} 
 />
- 
+
   </View>
     <View style={styles.Icon3}>
                                     <Icon name="eye-outline" size={18} />
@@ -99,12 +111,23 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
 
         <View style={styles.buttonStyle}>  
             <Button  
-               onPress={this.myFun}
-        title="validate"  
+             onPress= {this.myFun}
+         
+        title="validate & PassValue"  
+    //     onPress={(myFun)=>{
+    //         if(myFun=""){
+    //             {this.state.Error}
+    //         }else{
+    //         this.props.navigation.navigate('Profile', {  
+    //             userName: this.state.username,
+    //             password: this.state.password,    
+    //         })  
+    //     }  }
+    // }
         // color="#00B0FF"  
         />        
         <Text></Text>  
-            <Button  
+            {/* <Button  
         title="Submit"  
         // color="#00B0FF"  
         onPress={() =>  
@@ -113,7 +136,7 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
             password: this.state.password,    
         })  
     }  
-        />  
+        />   */}
   
         </View>  
         </View>  
