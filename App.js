@@ -22,6 +22,33 @@ export default (AppNavigator);
 
 
 
+// skip this line if using Create React Native App  
+// AppRegistry.registerComponent('AwesomeProject', () => SectionListBasics);  
+
+
+
+// skip this line if using Create React Native App  
+//AppRegistry.registerComponent('MyReactNativeApp', () => ParentsClass);  
+
+// import React from 'react';
+// import { createStore } from 'redux';
+// import { Provider } from 'react-redux';
+// import reducer from './Redux/reducer';
+// import Timer from './Redux/Timer';
+
+// const store = createStore(reducer);
+
+// export default class App extends React.Component {
+// 	render() {
+// 		return (
+// 			<Provider store={store}>
+// 				<Timer />
+// 			</Provider>
+// 		);
+// 	}
+// }
+
+
 
 // import React, { Component } from 'react';
 // import { Text, Alert, Button, View, StyleSheet } from 'react-native';
