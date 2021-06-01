@@ -67,9 +67,9 @@ myFun=() =>{
        
             <View style={styles.container}>  
       
-<Image source={require('../images/logo1.png')}  
+<Image source={require('../images/secondconsult.jpg')}  
 
-style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />  
+style={{width:'90%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />  
 
             <Text style={styles.Login}>Login</Text>
 
@@ -146,7 +146,7 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
 const styles = StyleSheet.create({  
     container: {  
         flex: 1,  
-       // backgroundColor: '#fff',  
+        backgroundColor: '#fff',  
         alignItems: 'center',  
         padding: 16,  
     },  
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
         marginTop:2,
         marginBottom:2,
         borderRadius:10,
-       backgroundColor:'white',
+       backgroundColor:'lightgray',
         paddingHorizontal:38,width:293,
         //borderColor:'red',
         marginLeft:2,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
             marginTop:2,
         marginBottom:2,
         borderRadius:10,
-        backgroundColor:'white',width:293,
+        backgroundColor:'lightgray',width:293,
         paddingHorizontal:38,
         //borderColor:'red',
         color:'black'
