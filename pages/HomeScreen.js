@@ -3,20 +3,15 @@ import validator from 'validator'
 import { StyleSheet, View, Button, TextInput,Text,Image,Keyboard,Alert} from 'react-native';  
   import Icon from 'react-native-vector-icons/Ionicons';
 
+import MyTextInput from '../component/customInput';
 
-
-
-  
 export default class HomeScreen extends React.Component {  
-  
     constructor(props) {  
       
         super(props);  
         this.state = {  
             username: '',  
-            password: '',
-       
-           
+            password: '',  
         };  
     }  
     static navigationOptions = {
@@ -51,7 +46,6 @@ myFun=() =>{
       this.setState({Error: 'thank you, your form is submitted successfully'});
     }
   
-  
   }
   
     render() {  
@@ -59,34 +53,32 @@ myFun=() =>{
         return (  
        
             <View style={styles.container}>  
-              <Text style={{color:'red', textAlign:'center'}}>
-      {this.state.Error}
-      </Text>
-<Image source={require('../images/logo.png')}  
+      
+<Image source={require('../images/logo1.png')}  
 
 style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />  
 
-
-
-
             <Text style={styles.Login}>Login</Text>
-            
-    <TextInput 
+
+            <View style={styles.Email}>
+    <MyTextInput 
         value={this.state.username}  
         onChangeText={username => this.setState({ username })}  
-    placeholder="Enter Email Id"  style={styles.Email}
+    placeholder="     EnterEmailId"  
    
-    ></TextInput>
-    
-    <TextInput 
-     value={this.state.password}  
-     onChangeText={password => this.setState({ password })}  
-    placeholder="Password"
-    secureTextEntry={true} 
-    style={styles.Password}
-  
-    ></TextInput>
-  
+    ></MyTextInput>
+
+
+</View>
+<View style={styles.Password}>
+<MyTextInput 
+   value={this.state.password}  
+   onChangeText={password => this.setState({ password })}  
+  placeholder="      Password    "
+  secureTextEntry={true} 
+/>
+ 
+  </View>
     <View style={styles.Icon3}>
                                     <Icon name="eye-outline" size={18} />
                                 </View>
@@ -97,28 +89,19 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
                                     <Icon name="mail-outline" size={25} />
                                 </View>
 <Text></Text>
-
-
-
-
 <Text></Text>
 <Text></Text>
 <Text></Text>
+<Text></Text>
+<Text style={{color:'red', textAlign:'center'}}>
+      {this.state.Error}
+      </Text>
 
-
-
-
-
-
-      
-     
         <View style={styles.buttonStyle}>  
             <Button  
                onPress={this.myFun}
         title="validate"  
         // color="#00B0FF"  
-    
-    
         />        
         <Text></Text>  
             <Button  
@@ -127,9 +110,7 @@ style={{width:'50%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
         onPress={() =>  
         this.props.navigation.navigate('Profile', {  
             userName: this.state.username,
-            password: this.state.password, 
-
-          
+            password: this.state.password,    
         })  
     }  
         />  
@@ -159,7 +140,7 @@ const styles = StyleSheet.create({
         marginBottom:2,
         borderRadius:10,
        backgroundColor:'white',
-        paddingHorizontal:78,
+        paddingHorizontal:38,width:293,
         //borderColor:'red',
         marginLeft:2,
         
@@ -168,27 +149,27 @@ const styles = StyleSheet.create({
         Icon2:{
             marginBottom:-12,
             marginTop:-100,
-            marginLeft:-162,
+            marginLeft:-242,
             color:'green'
         },
         Password:{
             marginTop:2,
         marginBottom:2,
         borderRadius:10,
-        backgroundColor:'white',
-        paddingHorizontal:92,
+        backgroundColor:'white',width:293,
+        paddingHorizontal:38,
         //borderColor:'red',
         color:'black'
         },
         Icon3:{
             marginTop:-35,
             marginBottom:53,
-            marginLeft:179
+            marginLeft:209
         },
         Icon1:{
             marginBottom:22,
             marginTop:-82,
-            marginLeft:-159
+            marginLeft:-239
         },
         forgetpwd:{
             marginBottom:-33,
@@ -198,6 +179,6 @@ const styles = StyleSheet.create({
         },
         Login:{
             fontSize:22,
-            marginLeft:-162
+            marginLeft:-222
         },
 });  

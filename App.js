@@ -19,4 +19,3 @@ import ProfileScreen from './pages/ProfileScreen';
   import AppNavigator from './Navigation/stacknavigator';
 
 export default (AppNavigator);  
-
