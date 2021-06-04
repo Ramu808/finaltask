@@ -54,21 +54,16 @@ data:[]
         <Text>
           
           if ({item.completed}=="true") {
-              //  console.warn(item.completed)
-       
-       
- (item.completed)
-
+             console.warn(item.completed)
+              // this.setState(item.completed)
+             //alert(item.completed)
        
           } else {
-        //  console.log(item.getapiData)
-      
-       (item.completed)
-          
+        console.log(item.getapiData)
             
           }
       
-          {item.userId}::{item.id}:::{item.title}::{item.completed}
+          {/* {item.userId}::{item.id}:::{item.title}::{item.completed} */}
           </Text>
   
         )}
