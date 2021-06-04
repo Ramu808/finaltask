@@ -1,32 +1,14 @@
 import { Email, Password, } from './actiontypes';
 
-const TIMER_DURATION = 60;
+
 
 // initial state
 const initialState = {
-	isPlaying: false,
-	elapsedTime: 0,
-	timerDuration: TIMER_DURATION
+	Email,Password
+	
 };
 
 // Helper Functions
-
-function Email1(state) {
-	return {
-		...state,
-		isPlaying: true
-	};
-}
-
-function Password1(state) {
-	return {
-		...state,
-		isPlaying: false,
-		elapsedTime: 0,
-		timerDuration: TIMER_DURATION
-	};
-}
-
 
 
 // Reducer Function

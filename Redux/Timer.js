@@ -6,16 +6,68 @@ import { actionCreators as actions } from './action';
 
 
 class Timer extends React.Component {
+	constructor(props) {  
+      
+        super(props);  
+        this.state = {  
+            username: '',  
+            password: '',  
+        };  
+    }  
+    static navigationOptions = {
+        headerLeft: () => 'null',    headerShown: false,
+title : ""
+}
 
+myFun=() =>{
+   
+    const {username,password,title,onPress} = this.state;
+    // Alert.alert('Credentials', `${username} + ${password}`);
+    var temp=username.search('@');
+    //alert(temp);
+    if(username==""){
+      //alert('please fill the first name');
+      this.setState({Error: 'please fill the user name'});
+    }
+    else if(temp==-1){
+        //alert('please fill the first name');
+        this.setState({Error: 'please fill the @ symbol'});
+      }
+    else if(password==""){
+    //  alert('please fill the last name');
+        this.setState({Error: 'please fill the Password name'});
+    }
+  
+    else if(password.length <7){
+      this.setState({Error: 'password  must be more than 7'});
+    }
+    else if(onPress==this.myFun){
+        // this.setState({Error: 'password  must be more than 7'});
+        this.props.navigation.navigate('Profile', {  
+            userName: this.state.username,
+            password: this.state.password,    
+        })  
+      }
+    
+    else{
+      alert('thank you, your form is submitted successfully');
+      this.props.navigation.navigate('Profile', {  
+        userName: this.state.username,
+        password: this.state.password,    
+    })  
+  
+       this.setState({Error: 'thank you, your form is submitted successfully'});
+    }
+  
+  }
+  
 	render() {
 	
 		return (
 			<View style={styles.container}>
-				<StatusBar barStyle={'light-content'} />
+		
 				<View style={styles.upper}>
-					<Text style={styles.time}>
-				
-					</Text>
+			
                     <Text>Hiii</Text>
 				</View>
 			
