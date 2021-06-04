@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import validator from 'validator'
-import { StyleSheet, View, Button, TextInput,Text,Image,Keyboard,Alert} from 'react-native';  
+import { StyleSheet, View, Button, TextInput,Text,Image,Keyboard,Alert,ScrollView} from 'react-native';  
   import Icon from 'react-native-vector-icons/Ionicons';
-
+ import axios from 'axios';
 import MyTextInput from '../component/customInput';
 
 export default class HomeScreen extends React.Component {  
@@ -12,6 +12,7 @@ export default class HomeScreen extends React.Component {
         this.state = {  
             username: '',  
             password: '',  
+            data:[],otherParam: ''
         };  
     }  
     static navigationOptions = {
@@ -21,7 +22,7 @@ title : ""
 
 myFun=() =>{
    
-    const {username,password,title,onPress} = this.state;
+    const {username,password,title,onPress,otherParam} = this.state;
     // Alert.alert('Credentials', `${username} + ${password}`);
     var temp=username.search('@');
     //alert(temp);
@@ -45,7 +46,8 @@ myFun=() =>{
         // this.setState({Error: 'password  must be more than 7'});
         this.props.navigation.navigate('Profile', {  
             userName: this.state.username,
-            password: this.state.password,    
+            password: this.state.password,   
+            otherParam:"hiii" 
         })  
       }
     
@@ -53,7 +55,8 @@ myFun=() =>{
       alert('thank you, your form is submitted successfully');
       this.props.navigation.navigate('Profile', {  
         userName: this.state.username,
-        password: this.state.password,    
+        password: this.state.password,   
+        otherParam:"hiii" 
     })  
   
        this.setState({Error: 'thank you, your form is submitted successfully'});
@@ -61,6 +64,25 @@ myFun=() =>{
   
   }
   
+
+
+  
+
+  componentDidMount(){
+    this.getapiData()
+  }
+    async getapiData(){
+    {
+      let resp = await axios.get('https://jsonplaceholder.typicode.com/todos' );
+      console.warn(resp.data)
+      this.setState({data:resp.data})
+    }
+  }
+
+
+
+
+
     render() {  
         const { navigate } = this.props.navigation;  
         return (  
@@ -139,6 +161,40 @@ style={{width:'90%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
         />   */}
   
         </View>  
+        <Text>API data</Text>
+        <ScrollView>
+	<View>
+     {
+      this.state.data.length>0?
+    
+    <View>
+      {
+        this.state.data.map((item)=>
+     
+        <Text>
+          
+          {/* if ({item.completed}=="true") {
+               console.warn(item.completed.getapiData)
+          } else {
+         console.log(item.getapiData)
+          }
+           */}
+          {item.userId}::{item.id}:::{item.title}::{item.completed}</Text>
+        
+        )}
+        <Text>
+     
+      </Text>
+     </View>:<Text>data is loading ....</Text>
+  
+}
+
+  </View>
+  </ScrollView>
+
+
+
+
         </View>  
     );  
     }  

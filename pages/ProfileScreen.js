@@ -17,6 +17,7 @@ export default class ProfileScreen extends React.Component {
         const { navigation } = this.props;  
         const user_name = navigation.getParam('userName', 'NO-User');  
         const password = navigation.getParam('password', 'NO-User');  
+        const otherParam = navigation.getParam('otherparam', 'NO-User');  
     
         return (  
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>  
@@ -26,6 +27,7 @@ export default class ProfileScreen extends React.Component {
                 <Text style={styles.textStyle1}>Welcome to ProfileScreen</Text>
                 <Text style={styles.textStyle}>Welcome to Profile Screen {JSON.stringify(user_name)}</Text>  
                 <Text style={styles.textStyle}>Password: {JSON.stringify(password)}</Text>  
+                <Text style={styles.textStyle}>otherParam: {JSON.stringify(otherParam)}</Text>  
               
                 <View style={styles.buttonStyle}>  
                 <Button  
