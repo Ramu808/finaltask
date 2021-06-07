@@ -23,7 +23,7 @@ data:[]
     async getapiData(){
     {
       let resp = await axios.get('https://jsonplaceholder.typicode.com/todos' );
-     // console.warn(resp.data)
+    // console.warn(resp.data)
       this.setState({data:resp.data})
     }
   }
@@ -38,34 +38,45 @@ data:[]
     <View>
       {
         this.state.data.map((item)=>
+
+{       
+        if (item.userId==1) {
      
-   
-          {
-          if (item.userId==10) {
-       
             console.log(item.id),
 
-            console.log(item.userId),
-
-            console.log(item.completed),
-                        console.log(item.title),
-              //this.setState(item.completed)
-             //alert(item.userId=1),
-             <Text>
-             {/* {item.userId>0} */}
-          
-           </Text>
-          }else {
-        //console.log(item.data)
-          }
-          },
+           console.log(item.userId),
+           console.log(item.title),
+          console.log(item.completed)
       
-   
+        }
+        else {
       
-        )}
-        <Text>
+          <Text>{item.id}:::{item.title}</Text>
+        }
+  
+     <Text>{item.id}:::{item.title}</Text>
      
-      </Text>
+          
+        //   if (item.userId==10) {
+       
+        //     console.log(item.id),
+
+        //     console.log(item.userId),
+
+        //     console.log(item.completed),
+        //                 console.log(item.title),
+        //       //this.setState(item.completed)
+        //      //alert(item.userId=1),
+        //   }
+        //   else {
+        // console.log(item.data)
+        //   }
+    
+        
+      })
+      
+    }  
+       
      </View>:<Text>data is loading ....</Text>
   
 }
