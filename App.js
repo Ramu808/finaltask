@@ -9,19 +9,7 @@ import axios from 'axios';
  
   constructor(){
     super()
-//     if ({item.completed})=="true") {
-//       //  console.warn(item.completed)
-// alert(temp)
-// {item.completed}
 
-    
-//   } else {
-// //  console.log(item.getapiData)
-// <Text>
-// {item.data}
-
-//        </Text>
-//   }
 
     this.state={
 
@@ -35,7 +23,7 @@ data:[]
     async getapiData(){
     {
       let resp = await axios.get('https://jsonplaceholder.typicode.com/todos' );
-      console.warn(resp.data)
+     // console.warn(resp.data)
       this.setState({data:resp.data})
     }
   }
@@ -51,21 +39,29 @@ data:[]
       {
         this.state.data.map((item)=>
      
-        <Text>
-          
-          if ({item.completed}=="true") {
-             console.warn(item.completed)
-              // this.setState(item.completed)
-             //alert(item.completed)
+   
+          {
+          if (item.userId==10) {
        
-          } else {
-        console.log(item.getapiData)
-            
+            console.log(item.id),
+
+            console.log(item.userId),
+
+            console.log(item.completed),
+                        console.log(item.title),
+              //this.setState(item.completed)
+             //alert(item.userId=1),
+             <Text>
+             {/* {item.userId>0} */}
+          
+           </Text>
+          }else {
+        //console.log(item.data)
           }
+          },
       
-          {/* {item.userId}::{item.id}:::{item.title}::{item.completed} */}
-          </Text>
-  
+   
+      
         )}
         <Text>
      
