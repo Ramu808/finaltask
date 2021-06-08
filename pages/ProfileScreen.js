@@ -34,6 +34,11 @@ export default class ProfileScreen extends React.Component {
                     title="Go back"  
                     onPress={() => this.props.navigation.goBack()}  
                 />  
+                <Text></Text>
+                  <Button  
+                    title="Api Data"  
+                    onPress={() => this.props.navigation.navigate('Apidata')}  
+                />  
                 </View>  
             </View>  
         );  
@@ -54,6 +59,6 @@ const styles = StyleSheet.create({
     buttonStyle:{  
         width: "93%",  
         marginTop: 50,  
-        backgroundColor: "red",  
+        //backgroundColor: "red",  
     }  
 });  

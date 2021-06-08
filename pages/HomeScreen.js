@@ -161,33 +161,12 @@ style={{width:'90%', height: '40%',  marginLeft:2, resizeMode: 'contain'}} />
         />   */}
   
         </View>  
-        <Text>API data</Text>
+       
         <ScrollView>
 	<View>
-     {
-      this.state.data.length>0?
-    
-    <View>
-      {
-        this.state.data.map((item)=>
-     
-        <Text>
-          
-          {/* if ({item.completed}=="true") {
-               console.warn(item.completed.getapiData)
-          } else {
-         console.log(item.getapiData)
-          }
-           */}
-          {item.userId}::{item.id}:::{item.title}::{item.completed}</Text>
-        
-        )}
-        <Text>
-     
-      </Text>
-     </View>:<Text>data is loading ....</Text>
   
-}
+  
+
 
   </View>
   </ScrollView>
