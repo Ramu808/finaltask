@@ -12,7 +12,7 @@ export default class HomeScreen extends React.Component {
         this.state = {  
             username: '',  
             password: '',  
-            data:[],otherParam: ''
+            data:[],
         };  
     }  
     static navigationOptions = {
@@ -22,7 +22,7 @@ title : ""
 
 myFun=() =>{
    
-    const {username,password,title,onPress,otherParam} = this.state;
+    const {username,password,title,onPress} = this.state;
     // Alert.alert('Credentials', `${username} + ${password}`);
     var temp=username.search('@');
     //alert(temp);
@@ -56,7 +56,7 @@ myFun=() =>{
       this.props.navigation.navigate('Profile', {  
         userName: this.state.username,
         password: this.state.password,   
-        otherParam:"hiii" 
+        
     })  
   
        this.setState({Error: 'thank you, your form is submitted successfully'});
