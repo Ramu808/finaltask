@@ -83,8 +83,7 @@
 
 
 // //using axios to fetch data from API 
-
-// import React, {Component} from 'react'
+import React, {Component} from 'react'
 // import { Text, Alert, Button, View, StyleSheet,ScrollView } from 'react-native';
 
 // import axios from 'axios';
